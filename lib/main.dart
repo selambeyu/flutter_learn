@@ -12,7 +12,6 @@ void main(){
 class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-  var a="hello";
   // TODO: implement build
   return MaterialApp(
       home: Scaffold(

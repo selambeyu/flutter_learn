@@ -20,20 +20,26 @@ class _ProductManagerState extends State<ProductManager>{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Column(children: [Container(
-      margin: EdgeInsets.all(10.0),
-      child: RaisedButton(
+    return Column(children: <Widget>[
+
+      RaisedButton(
         onPressed: (){
           setState(() {
-            _products.add("Advanced value tester");
-            print(_products);
+            _products.add('Advanced value tester');
+                print(_products);
           });
         },
-        child: Text("Add product"),
+        child: Text("Add"),
       ),
-    ),
-    Products(_products)
-    ],);
+      RaisedButton(
+        onPressed: (){
+          _products.clear();
+          print(_products);
+        },
+        child: Text("Delete"),
+      ),Products(_products)
+    ]);
   }
 
 }
+
