@@ -52,6 +52,30 @@ class RandomWordState extends State<RandomWord>{
 
   }
 
+  void _pushedSaved(){
+     Navigator.of(context).push(
+       MaterialPageRoute(
+         builder: (BuildContext context){
+           final Iterable<ListTile> tiles=_saveWordsPair.map((WordPair pair){
+             return ListTile(
+               title: Text(pair.asPascalCase,style: TextStyle(fontSize: 16.0)
+               )
+             );
+
+           });
+           final List<Widget> divided=ListTile.divideTiles(context: context,tiles: tiles).toList();
+           return Scaffold(
+             appBar: AppBar(
+               title: Text("Saved wordPairs"),
+             ),
+             body: ListView(children: divided,),
+           );
+
+       }
+
+       )
+     );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,6 +85,12 @@ class RandomWordState extends State<RandomWord>{
       home: Scaffold(
         appBar: AppBar(
           title: Text("Word Pair Generator"),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.list),
+              onPressed: _pushedSaved,
+            )
+          ],
         ),
         body: _buildList(),
       ),
