@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget{
           title: Text("EasyList"
       ) ,
       ),
-      body: ProductManager(),
+      body: ProductManager("Food Tester"),
 
   ),
   );
