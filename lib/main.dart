@@ -10,7 +10,14 @@ class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return null;
+    return MaterialApp(
+      theme: ThemeData(primaryColor: Colors.purple[900]),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("WordPair Generator"),
+        ),
+      ),
+    );
   }
 
 }
