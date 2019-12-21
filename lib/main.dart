@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget{
 
     // TODO: implement build
     return MaterialApp(
-      theme: ThemeData(primaryColor: Colors.purple[900]),
+
       home: RandomWord(),
     );
   }
@@ -33,31 +33,39 @@ class RandomWord extends StatefulWidget{
 class RandomWordState extends State<RandomWord>{
   final _randomWordPair=<WordPair>[];
   Widget _buildList(){
-     return ListView(
-       padding: const EdgeInsets.all(8),
-       children: <Widget>[
-         Container(
-           height: 50,
-           color: Colors.amber[600],
-           child: const Center(child: Text('Entry A')),
-         ),
-         Container(
-           height: 50,
-           color: Colors.amber[500],
-           child: const Center(child: Text('Entry B')),
-         ),
-         Container(
-           height: 50,
-           color: Colors.amber[100],
-           child: const Center(child: Text('Entry C')),
-         ),
-       ],
+     return ListView.builder(
+       padding: const EdgeInsets.all(16.0),
+       itemBuilder: (context, item){
+         if(item.isOdd) return Divider();
+          final index = item ~/2;
+
+          if(index>= _randomWordPair.length){
+            _randomWordPair.addAll(generateWordPairs().take(10));
+
+          // ignore: missing_return
+          }
+          return _buildRow(_randomWordPair[index]);
+
+       },
      );
   }
+
+  Widget _buildRow(WordPair pair){
+    return ListTile(
+      title: Text(pair.asPascalCase,style: TextStyle(fontSize: 18.0),),
+
+    );
+
+
+
+  }
+
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
+      theme: ThemeData(primaryColor: Colors.purple[900]),
       home: Scaffold(
         appBar: AppBar(
           title: Text("Word Pair Generator"),
