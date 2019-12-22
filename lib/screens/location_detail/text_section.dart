@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/screens/location_detail/style.dart';
 
 
 
@@ -17,11 +18,11 @@ class TextSection extends StatelessWidget{
       children: [
         Container(
           padding: const EdgeInsets.fromLTRB(_hpad, 32.0, _hpad, 4.0) ,
-          child:Text(this._title),
+          child:Text(this._title,style: AppBarTextStyle),
         ),
         Container(
           padding: const EdgeInsets.fromLTRB(_hpad, 10.0, _hpad, _hpad),
-          child:  Text(this._body),
+          child:  Text(this._body,style: BodyTextStyle),
         )
 
        

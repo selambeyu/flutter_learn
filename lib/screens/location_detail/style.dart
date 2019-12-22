@@ -10,7 +10,13 @@ const AppBarTextStyle=TextStyle(
   fontSize: MediumTexSize,
   fontFamily: FontNameDefault ,
   fontWeight: FontWeight.w300,
-  color:Colors.white,
+  color:Colors.purple,
+);
 
+const BodyTextStyle=TextStyle(
+  fontSize: SmallTextSize,
+  fontFamily: FontNameDefault ,
+  fontWeight: FontWeight.w100,
+  color:Colors.purple,
 
 );
