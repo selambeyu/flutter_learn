@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
-import './app.dart';
 
+import './screens/location_detail/location_detail.dart';
 
-void main(){
-  runApp(MyApp());
-}
-
-
-class MyApp extends StatelessWidget{
+class App extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-
-      home: App(),
+      home: LocationDetail(),
     );
   }
 
