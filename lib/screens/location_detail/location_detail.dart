@@ -19,7 +19,7 @@ class LocationDetail extends StatelessWidget{
          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            ImageBanner('./assets/image/chilada.jpeg'),
+            ImageBanner("./assets/images/chilada.jpeg"),
             TextSection("Chilada Baboon","The gelada, sometimes called the bleeding-heart monkey or the gelada \"baboon\", is a species of Old World monkey found only in the Ethiopian Highlands."),
             TextSection("Section one","this section contain the overview about turism"),
             TextSection("Section two","this section contain the detail about tourism in ethiopia"),
